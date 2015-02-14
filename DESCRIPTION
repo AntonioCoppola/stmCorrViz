@@ -1,0 +1,9 @@
+Package: stmCorrViz
+Type: Package
+Title: A Tool for STM Topic Model Visualizations
+Version: 1.0
+Date: 2015-02-14
+Author: Antonio Coppola, Margaret E. Roberts, Brandon M. Stewart and Dustin Tingley
+Maintainer: Antonio Coppola <acoppola@college.harvard.edu>
+Description: More about what it does (maybe more than one line)
+License: MIT
