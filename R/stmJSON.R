@@ -1,5 +1,5 @@
 stmJSON <-
-function(mod, documents=NULL, metadata=NULL,
+function(mod, documents_raw=NULL, documents_matrix=NULL,
                     title="STM Model", clustering_threshold=1.5,
                     labels_number=7, verbose){
   
@@ -32,9 +32,9 @@ function(mod, documents=NULL, metadata=NULL,
 #        clusters. This is currently non-functional.
   
   # Require libraries
-  require(stm)
-  require(slam)
-  require(jsonlite)
+  #require(stm)
+  #require(slam)
+  #require(jsonlite)
   
   # Generate baseline topic list
   out <- list()
@@ -46,21 +46,19 @@ function(mod, documents=NULL, metadata=NULL,
   clust <- clusterAnalysis(mod, labels_number=labels_number)
   
   # Obtain document-term matrix
-  documents <- iconv(documents, to='utf-8', sub="")
-  temp <- textProcessor(documents, metadata, verbose=FALSE)
-  meta<-temp$meta
-  vocab<-temp$vocab
-  docs<-temp$documents
-  prep_output <- prepDocuments(docs, vocab, meta, verbose=FALSE)
-  docs<-prep_output$documents
-  vocab<-prep_output$vocab
-  meta <-prep_output$meta
+  # documents_raw <- iconv(documents_raw, to='utf-8', sub="")
+  # temp <- textProcessor(documents_raw, metadata, verbose=FALSE)
+  # meta<-temp$meta
+  # vocab<-temp$vocab
+  # docs<-temp$documents_raw
+  # prep_output <- prepDocuments(docs, vocab, meta, verbose=FALSE)
+  # docs<-prep_output$documents_raw
   
   if(verbose==TRUE)
     cat("Generating JSON representation of the model ... \n")
   
   # Extra data objects
-  thoughts <- findThoughts(mod, documents)
+  thoughts <- findThoughts(mod, documents_raw)
   full_labels <- labelTopics(mod)
   topic_proportions <- colMeans(mod$theta)
   #exclusivity_scores <- exclusivity(mod)
@@ -97,7 +95,7 @@ function(mod, documents=NULL, metadata=NULL,
   #                                 semcoh_scores)
 
   # Get beta weights for model
-  beta_weights <- getBetaWeights(mod, docs)
+  beta_weights <- getBetaWeights(mod, documents_matrix)
     
   # Assign cluster names
   out <- assignClusterNames(out, labels_number, beta_weights, mod$vocab)

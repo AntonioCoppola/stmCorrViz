@@ -1,14 +1,11 @@
 \name{stmCorrViz-package}
 \alias{stmCorrViz-package}
-\alias{stmCorrViz}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+Hierarchical Correlation View of STM Models
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+A tool for hierarchical visualizations of the Structural Topic Model (STM) of Roberts, Stewart, and Tingley. The package allows the user to generate interactive visualizations highlighting correlations among topics, and can be used to view the model at differing levels of complexity.
 }
 \details{
 \tabular{ll}{
@@ -16,25 +13,15 @@ Package: \tab stmCorrViz\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
 Date: \tab 2015-02-14\cr
-License: \tab What license is it under?\cr
+License: \tab GPL (>= 2) \cr
 }
-~~ An overview of how to use the package, including the most important functions ~~
 }
 \author{
-Who wrote it
+Antonio Coppola, Margaret E. Roberts, Brandon M. Stewart, and Dustin Tingley
 
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+Maintainer: Antonio Coppola <acoppola@college.harvard.edu>
 }
 \references{
-~~ Literature or other references for background information ~~
+Margaret E. Roberts, Brandon M. Stewart and Dustin Tingley (2014). \href{http://structuraltopicmodel.com/}{stm: R Package for Sturctural Topic Models}.
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
-\keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
-\examples{
-~~ simple examples of the most important functions ~~
-}
+
