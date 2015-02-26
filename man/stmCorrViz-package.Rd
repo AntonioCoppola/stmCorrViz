@@ -11,7 +11,7 @@ A tool for hierarchical visualizations of the Structural Topic Model (STM) of Ro
 \tabular{ll}{
 Package: \tab stmCorrViz\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
+Version: \tab 1.1\cr
 Date: \tab 2015-02-14\cr
 License: \tab GPL (>= 2) \cr
 }
