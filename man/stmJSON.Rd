@@ -5,7 +5,8 @@
 Generate JSON Representation of STM Model
 }
 \description{
-This function generates a nested JSON structure representing a fitted Structual Topic Model (\href{http://structuraltopicmodel.com/}{STM}). 
+This function generates a nested JSON structure representing a fitted Structual Topic Model (\href{http://structuraltopicmodel.com/}{STM}).
+Used internally by \code{\link{stmCorrViz}}.  Most users will not need to call this directly.
 }
 \usage{
 stmJSON(mod, documents_raw=NULL, documents_matrix=NULL,
@@ -14,7 +15,7 @@ stmJSON(mod, documents_raw=NULL, documents_matrix=NULL,
 }
 \arguments{
   \item{mod}{
-An STM object.  
+An \code{STM} fitted model from the \pkg{stm} package.  
 }
   \item{documents_raw}{
   The raw documents used to generate the STM model. A character vector where each entry is the full text of a document.
@@ -32,7 +33,7 @@ A parameter specifying the level of aggregation in the hierarchical clustering r
 The number of top words used to label each node (topic or topical cluster) in the visualization.
 }
 \item{verbose}{
-	Boolean. If set to TRUE, displays function progress in the console during execution.
+	Logical. If set to TRUE, displays function progress in the console during execution.
 }
 }
 
@@ -52,7 +53,7 @@ New beta matrices and top words are computed for each of the topic clusters acco
 
 
 \references{
-Margaret E. Roberts, Brandon M. Stewart and Dustin Tingley (2014). \href{http://structuraltopicmodel.com/}{stm: R Package for Sturctural Topic Models}.
+Margaret E. Roberts, Brandon M. Stewart and Dustin Tingley (2014). \href{http://structuraltopicmodel.com/}{stm: R Package for Structural Topic Models}.
 }
 
 \seealso{
