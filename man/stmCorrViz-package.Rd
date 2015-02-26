@@ -5,7 +5,7 @@
 Hierarchical Correlation View of STM Models
 }
 \description{
-A tool for hierarchical visualizations of the Structural Topic Model (STM) of Roberts, Stewart, and Tingley. The package allows the user to generate interactive visualizations highlighting correlations among topics, and can be used to view the model at differing levels of complexity.
+Generates an interactive visualization of topic correlations/hierarchy in a Structural Topic Model (STM) of Roberts, Stewart, and Tingley.  The package performs a hierarchical clustering of topics which are then exported to a JSON object and visualized using D3.
 }
 \details{
 \tabular{ll}{

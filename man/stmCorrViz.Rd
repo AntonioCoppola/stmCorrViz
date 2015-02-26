@@ -2,7 +2,7 @@
 \alias{stmCorrViz}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Generate STM Full-Model Correlation Tree
+Generate STM Correlation Tree
 }
 \description{
 This function generates an interactive, full-model HTML visualization of topic hierachies for a fitted \href{http://structuraltopicmodel.com/}{STM} model. The visualization highlights the correlations among topics, and can be used to view the model at differing levels of complexity. The function makes use of the \href{http://d3js.org/}{D3.js} visualization library. The visualization needs to be viewed in a compatible web browser.
@@ -44,7 +44,7 @@ The number of top words used to label each node (topic or topical cluster) in th
 \details{
 This function generates a full-model, interactive, general-purpose hierarchical representation of an STM model.
 First a hierarchy of topics is created using hierarchical clustering as implemented in \code{hclust}.
-Then the hierarchy is written out to a JSON object using \code{\link{stmJSON}}.  Finally \code{D3} is used to create
+Then the hierarchy is written out to a JSON object using \code{\link{stmJSON}}.  Finally \href{http://d3js.org/}{D3.js} is used to create
 an interactive visualization.
 
 The visualization is built as a HTML page, and as such requires a web browser for inspection. 
@@ -53,7 +53,7 @@ The function does not return and object, but writes HTML output to disk.
 The visualization takes the form of an indented tree. The leaves of the tree correspond to topics. 
 The leaf nodes are grouped in topic clusters. This allows the model to be visualized at differing levels of aggregation.
 The function uses the D3.js library for visualization purpose. 
-Please note that the visualization is largely built on top of Mike Bostock's \href{http://bl.ocks.org/mbostock/1093025}{Collapsible Indented Tree} block. A nested JSON structure representing the hierarchical model is produced using the \code{\link{stmJSON}} function.
+The visualization is largely built on top of Mike Bostock's \href{http://bl.ocks.org/mbostock/1093025}{Collapsible Indented Tree} block. A nested JSON structure representing the hierarchical model is produced using the \code{\link{stmJSON}} function.
 }
 
 \examples{
