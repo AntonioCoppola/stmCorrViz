@@ -1,2 +1,3 @@
 importFrom(jsonlite, toJSON)
+importFrom(stm, labelTopics, findThoughts)
 export(stmCorrViz, stmJSON)
