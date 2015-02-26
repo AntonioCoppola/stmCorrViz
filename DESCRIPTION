@@ -3,8 +3,7 @@ Type: Package
 Title: A Tool for Structural Topic Model Visualizations
 Version: 1.1
 Date: 2015-02-14
-Imports: jsonlite
-Suggests: stm
+Imports: jsonlite, stm
 Authors@R: c(person("Antonio", "Coppola", role = c("aut", "cre", "cph"), email = "acoppola@college.harvard.edu"),
 	      person("Brandon", "Stewart", role = c("aut", "cph")),
 	      person("Margaret", "Roberts", role = c("ctb", "cph")),
