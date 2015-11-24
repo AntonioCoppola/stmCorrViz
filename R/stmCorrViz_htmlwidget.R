@@ -1,8 +1,13 @@
-#' <Add Title>
+#' stmCorrViz htmlwidget 
 #'
-#' <Add Description>
+#' Create a stmCorrViz with the power, convenience, and flexibility
+#'  of an htmlwidget.
+#'  
+#' @param stmJSON \code{JSON} output from \link{stmJSON}.
+#' @param width,height a valid \code{CSS} size unit for the
+#'          height and width of the htmlwidget
 #'
-#' @examples inst/examples/examples.R
+#' @example inst/examples/examples.R
 #' 
 #' @import htmlwidgets
 #'

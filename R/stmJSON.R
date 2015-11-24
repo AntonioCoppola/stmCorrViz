@@ -1,3 +1,5 @@
+#' @export
+
 stmJSON <-
 function(mod, documents_raw=NULL, documents_matrix=NULL,
                     title="STM Model", clustering_threshold=1.5,

@@ -1,10 +1,10 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Trying Out stmCorrViz_htmlwidget"
+author: "Kenton Russell"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{stmCorrViz_htmlwidget}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -17,7 +17,7 @@ Install from Github for a new `htmlwidget` superpower for `stmCorrViz`.
 
 Build the model just like `?stmCorrViz` instructs us.
 
-```{r}
+```{r message=FALSE}
 library(stmCorrViz)
 
 require(stm)

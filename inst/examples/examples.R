@@ -1,3 +1,5 @@
+\dontrun{
+
 #devtools::install_github("timelyportfolio/stmCorrViz@htmlwidget")
 
 library(stmCorrViz)
@@ -34,3 +36,5 @@ scv
 
 library(htmltools)
 browsable(tagList(scv,scv))
+
+}

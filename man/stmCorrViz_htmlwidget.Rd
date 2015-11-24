@@ -2,11 +2,60 @@
 % Please edit documentation in R/stmCorrViz_htmlwidget.R
 \name{stmCorrViz_htmlwidget}
 \alias{stmCorrViz_htmlwidget}
-\title{<Add Title>}
+\title{stmCorrViz htmlwidget}
 \usage{
 stmCorrViz_htmlwidget(stmJSON = NULL, width = NULL, height = NULL)
 }
+\arguments{
+\item{stmJSON}{\code{JSON} output from \link{stmJSON}.}
+
+\item{width, height}{a valid \code{CSS} size unit for the
+height and width of the htmlwidget}
+}
 \description{
-<Add Description>
+Create a stmCorrViz with the power, convenience, and flexibility
+ of an htmlwidget.
+}
+\examples{
+\dontrun{
+
+#devtools::install_github("timelyportfolio/stmCorrViz@htmlwidget")
+
+library(stmCorrViz)
+
+require(stm)
+data(gadarian)
+
+# Pre-processing the data
+temp <- textProcessor(documents=gadarian$open.ended.response, 
+                      metadata=gadarian)
+meta <- temp$meta
+vocab <- temp$vocab
+docs <- temp$documents
+out <- prepDocuments(docs, vocab, meta)
+docs <-out$documents
+vocab<-out$vocab
+meta <-out$meta
+
+# Fitting the STM model
+set.seed(02138)
+mod.out <- stm(docs, vocab, 20, 
+               prevalence=~treatment + s(pid_rep), data=meta)
+
+# Generating the visualization
+scv <- stmCorrViz_htmlwidget(
+  stmJSON(
+    mod.out,
+    documents_raw=as.character(gadarian$open.ended.response), 
+    documents_matrix=docs,
+    verbose=TRUE
+  )
+)
+scv
+
+library(htmltools)
+browsable(tagList(scv,scv))
+
+}
 }
 

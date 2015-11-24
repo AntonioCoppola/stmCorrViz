@@ -1,3 +1,5 @@
+#' @export
+
 stmCorrViz <-
 function(mod, file_out, documents_raw=NULL,
                            documents_matrix=NULL,

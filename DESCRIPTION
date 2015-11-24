@@ -19,6 +19,9 @@ Description: Generates an interactive visualization of topic correlations/
     to a JSON object and visualized using D3.
 License: GPL (>= 2)
 RoxygenNote: 4.1.1.9001
-Suggests: knitr,
+Suggests:
+    htmltools,
+    htmlwidgets,
+    knitr,
     rmarkdown
 VignetteBuilder: knitr
