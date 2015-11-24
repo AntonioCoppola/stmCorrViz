@@ -3,7 +3,7 @@ Type: Package
 Title: A Tool for Structural Topic Model Visualizations
 Version: 1.1
 Date: 2015-02-14
-Imports:
+Imports: 
     jsonlite,
     stm
 Authors@R: c(person("Antonio", "Coppola", role = c("aut", "cre", "cph"), email = "acoppola@college.harvard.edu"),
@@ -19,3 +19,6 @@ Description: Generates an interactive visualization of topic correlations/
     to a JSON object and visualized using D3.
 License: GPL (>= 2)
 RoxygenNote: 4.1.1.9001
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
