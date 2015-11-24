@@ -1,0 +1,48 @@
+.stmCorrViz_htmlwidget .node rect{
+  cursor:pointer;
+  fill:#fff;
+  fill-opacity:.5;
+  stroke:#3182bd;
+  stroke-width:1.5px;
+}
+
+.stmCorrViz_htmlwidget .node text{
+  font:10px sans-serif;
+  pointer-events:none;
+}
+
+.stmCorrViz_htmlwidget path.link{
+  fill:none;
+  stroke:#9ecae1;
+  stroke-width:1.5px;
+}
+
+.stmCorrViz_htmlwidget .control.glyphicon{
+  position:static;
+  color:#4A4C4F;
+  cursor:pointer;
+}
+
+.stmCorrViz_htmlwidget .scrollbox{
+  height: 120px;
+  border: 1px solid #e5e5e5;
+  overflow: scroll;
+}
+
+.stmCorrViz_htmlwidget .bar{
+  fill: steelblue;
+}
+
+.stmCorrViz_htmlwidget .axis{
+  font: 10px sans-serif;
+}
+
+.stmCorrViz_htmlwidget .axis path, .stmCorrViz_htmlwidget .axis line{
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.stmCorrViz_htmlwidget .x.axis path{
+  display: none;
+}
