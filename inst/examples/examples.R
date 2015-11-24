@@ -1,3 +1,5 @@
+#devtools::install_github("timelyportfolio/stmCorrViz@htmlwidget")
+
 library(stmCorrViz)
 
 require(stm)
