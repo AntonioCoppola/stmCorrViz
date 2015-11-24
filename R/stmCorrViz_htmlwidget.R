@@ -38,14 +38,56 @@ stmCorrViz_htmlwidget_html <-  function(id, style, class, ...){
 '
 <svg></svg>
 <div class="modal fade topicModal" tabindex="-1" role="dialog" aria-labelledby="topicModalLabel" aria-hidden="true">
-<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title topicModalLabel">Topic Information</h4></div>
-<div class="modal-body topicBody"><h5>Top Words</h5><ul class="word-list"><li class="high-prob">Highest Probability: </li><li class="frex">FREX: </li><li class="lift">Lift: </li><li class="score">Score: </li></ul><hr><h5>Representative Documents</h5>
-<div class="modal-body scrollbox doc1"></div>
-<br>
-<div class="modal-body scrollbox doc2"></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div><div class="modal-body modelBody"><h5>Summary</h5><span class="mod1-text"></span><hr><div class="barchartDiv">
-<h5>Topic Proportions in Corpus</h5><br></div><br><div class="modal-footer">
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div><div class="modal-body clusterBody"><h5>Summary</h5><span class="clust1-text"></span><br><br><div class="modal-footer">
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title topicModalLabel">Topic Information</h4>
+      </div>
+      <div class="modal-body topicBody">
+        <h5>Top Words</h5>
+        <ul class="word-list">
+          <li class="high-prob">Highest Probability: </li>
+          <li class="frex">FREX: </li>
+          <li class="lift">Lift: </li>
+          <li class="score">Score: </li>
+        </ul>
+        <hr>
+        <h5>Representative Documents</h5>
+        <div class="modal-body scrollbox doc1"></div>
+        <br>
+        <div class="modal-body scrollbox doc2"></div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <div class="modal-body modelBody">
+        <h5>Summary</h5>
+        <span class="mod1-text"></span>
+        <hr>
+        <div class="barchartDiv">
+          <h5>Topic Proportions in Corpus</h5>
+          <br>
+        </div>
+        <br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <div class="modal-body clusterBody">
+        <h5>Summary</h5>
+        <span class="clust1-text"></span>
+        <br><br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 '
     )
   )
