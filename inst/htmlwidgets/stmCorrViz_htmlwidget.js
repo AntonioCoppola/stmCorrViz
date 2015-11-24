@@ -193,42 +193,42 @@ HTMLWidgets.widget({
     
     function clickModal(d){
       if(d.size){
-        $("#doc1").text(d.thought_1);
-        $("#doc2").text(d.thought_2);
-        $("#high-prob").text("Highest Probability: "+d.prob);
-        $("#topicModalLabel").text("Topic "+d.topic_no+" Information");
-        $("#frex").text("FREX: "+d.frex);
-        $("#lift").text("Lift: "+d.lift);
-        $("#score").text("Score: "+d.score);
-        $("#proportion").text(""+d.proportion);
-        $("#modelBody").hide();
-        $("#clusterBody").hide();
-        $("#topicBody").show();
-        $("#topicModal").modal("show");
+        $("#" + el.id +" .doc1").text(d.thought_1);
+        $("#" + el.id +" .doc2").text(d.thought_2);
+        $("#" + el.id +" .high-prob").text("Highest Probability: "+d.prob);
+        $("#" + el.id +" .topicModalLabel").text("Topic "+d.topic_no+" Information");
+        $("#" + el.id +" .frex").text("FREX: "+d.frex);
+        $("#" + el.id +" .lift").text("Lift: "+d.lift);
+        $("#" + el.id +" .score").text("Score: "+d.score);
+        $("#" + el.id +" .proportion").text(""+d.proportion);
+        $("#" + el.id +" .modelBody").hide();
+        $("#" + el.id +" .clusterBody").hide();
+        $("#" + el.id +" .topicBody").show();
+        $("#" + el.id +" .topicModal").modal("show");
       } else if(d.this_root){
-        $("#topicModalLabel").text("Fitted Model Information");
-        $("#mod1-text").text(d.summary);
-        $("#topicBody").hide();
-        $("#clusterBody").hide();
-        $("#modelBody").show();
-        $("#topicModal").modal("show");
-        if ($("#barchartDiv").children().length == 2){
+        $("#" + el.id +" .topicModalLabel").text("Fitted Model Information");
+        $("#" + el.id +" .mod1-text").text(d.summary);
+        $("#" + el.id +" .topicBody").hide();
+        $("#" + el.id +" .clusterBody").hide();
+        $("#" + el.id +" .modelBody").show();
+        $("#" + el.id +" .topicModal").modal("show");
+        if ($("#" + el.id +" .barchartDiv").children().length == 2){
           proportionChart();
         }
       } else {
-        $("#topicModalLabel").text("Cluster Information");
-        $("#clust1-text").text("This cluster comprises topics "+d.topic_no.join(", ")+".");
-        $("#topicBody").hide();
-        $("#modelBody").hide();
-        $("#clusterBody").show();
-        $("#topicModal").modal("show");
+        $("#" + el.id +" .topicModalLabel").text("Cluster Information");
+        $("#" + el.id +" .clust1-text").text("This cluster comprises topics "+d.topic_no.join(", ")+".");
+        $("#" + el.id +" .topicBody").hide();
+        $("#" + el.id +" .modelBody").hide();
+        $("#" + el.id +" .clusterBody").show();
+        $("#" + el.id +" .topicModal").modal("show");
       }
     }
     
     function proportionChart(){
       for(var t=window.innerHeight/3.5,a=window.innerWidth/2.5,r=35,e=35,n=root.proportions.length,o=[.5];o.length<n;)
       o.push(o[o.length]+1);
-      var i=d3.select("#barchartDiv").append("svg")
+      var i=d3.select("#" + el.id +" .barchartDiv").append("svg")
               .attr({
                 width:a,
                 height:t,
