@@ -1,0 +1,63 @@
+---
+title: "Trying Out stmCorrViz_htmlwidget"
+author: "Kenton Russell"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{stmCorrViz_htmlwidget}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Install from Github for a new `htmlwidget` superpower for `stmCorrViz`.
+
+```{r eval = FALSE}
+#devtools::install_github("timelyportfolio/stmCorrViz@htmlwidget")
+```
+
+Build the model just like `?stmCorrViz` instructs us.
+
+```{r message=FALSE}
+library(stmCorrViz)
+
+require(stm)
+data(gadarian)
+
+# Pre-processing the data
+temp <- textProcessor(documents=gadarian$open.ended.response, 
+                      metadata=gadarian)
+meta <- temp$meta
+vocab <- temp$vocab
+docs <- temp$documents
+out <- prepDocuments(docs, vocab, meta)
+docs <-out$documents
+vocab<-out$vocab
+meta <-out$meta
+
+# Fitting the STM model
+set.seed(02138)
+mod.out <- stm(docs, vocab, 20, 
+               prevalence=~treatment + s(pid_rep), data=meta)
+```
+
+I hope this works... fingers crossed...
+
+```{r}
+# Generating the visualization
+scv <- stmCorrViz_htmlwidget(
+  stmJSON(
+    mod.out,
+    documents_raw=as.character(gadarian$open.ended.response), 
+    documents_matrix=docs,
+    verbose=TRUE
+  )
+)
+scv
+```
+
+`htmlwidgets`, if properly built, should not conflict.  Let's try two of our newly created `scv`.
+
+```{r}
+library(htmltools)
+tagList(scv,scv)
+```
