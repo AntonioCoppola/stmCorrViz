@@ -1,23 +1,23 @@
-#' @export
-
+##' @export
 stmCorrViz <-
+
 function(mod, file_out, documents_raw=NULL,
                            documents_matrix=NULL,
-                           title="STM Model", 
-                           clustering_threshold=1.5, 
+                           title="STM Model",
+                           clustering_threshold=1.5,
                            labels_number=7,
                            display=TRUE,
                            verbose=FALSE){
-  
-  JSON <- try(stmJSON(mod, documents_raw, documents_matrix, title, clustering_threshold, 
+
+  JSON <- try(stmJSON(mod, documents_raw, documents_matrix, title, clustering_threshold,
     labels_number, verbose), silent=TRUE)
 
-  if(is(JSON, "try-error"))
+  if(methods::is(JSON, "try-error"))
     stop("Clustering threshold out of range. Change the clustering threshold, or else consider increasing the number of topics.")
-  
+
   if(verbose==TRUE)
     cat("Generating HTML view ... \n")
-  
+
    header<-paste0('
   <!DOCTYPE html><meta charset=UTF-8>
   <style>.node rect{cursor:pointer;fill:#fff;fill-opacity:.5;stroke:#3182bd;stroke-width:1.5px;}
@@ -37,7 +37,7 @@ function(mod, file_out, documents_raw=NULL,
   var i=0,duration=400,root;var tree=d3.layout.tree().nodeSize([0,20]);var diagonal=d3.svg.diagonal().projection(function(d){return[d.y,d.x];});
   var svg=d3.select("body").append("svg").attr("width",width+margin.left+margin.right).attr("height",height+margin.top+margin.bottom).append("g").attr("transform","translate("+margin.left+","+margin.top+")");
   root= ')
-  
+
   footer<-paste0('\n \n root.x0=0;root.y0=0;update(root);function update(source){var nodes=tree.nodes(root);var height=Math.max(500,nodes.length*barHeight+margin.top+margin.bottom);
   d3.select("svg").transition().duration(duration).attr("height",height);d3.select(self.frameElement).transition().duration(duration).style("height",height+"px");nodes.forEach(function(n,i){n.x=i*barHeight;});
   var node=svg.selectAll("g.node").data(nodes,function(d){return d.id||(d.id=++i);});
@@ -64,12 +64,12 @@ function(mod, file_out, documents_raw=NULL,
   <br><div id="doc2" class="modal-body scrollbox"></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div><div class="modal-body" id="modelBody"><h5>Summary</h5><span id="mod1-text"></span><hr><div id="barchartDiv">
   <h5>Topic Proportions in Corpus</h5><br></div><br><div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div><div class="modal-body" id="clusterBody"><h5>Summary</h5><span id="clust1-text"></span><br><br><div class="modal-footer">
-  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div></body>') 
-  
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div></body>')
+
   fileConn<-file(file_out)
-  writeLines(paste0(header, JSON, footer), fileConn)
+  writeLines(paste0(header, JSON$json, footer), fileConn)
   close(fileConn)
-  
+
   if(display==TRUE){
     viewer <- getOption("viewer")
     if (!is.null(viewer))
@@ -77,5 +77,5 @@ function(mod, file_out, documents_raw=NULL,
     else
       utils::browseURL(file_out)
   }
-  
+
 }

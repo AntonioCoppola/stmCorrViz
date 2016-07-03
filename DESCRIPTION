@@ -1,27 +1,23 @@
 Package: stmCorrViz
 Type: Package
 Title: A Tool for Structural Topic Model Visualizations
-Version: 1.1
-Date: 2015-02-14
-Imports: 
+Version: 1.3
+Date: 2015-07-03
+Imports:
     jsonlite,
-    stm
-Authors@R: c(person("Antonio", "Coppola", role = c("aut", "cre", "cph"), email = "acoppola@college.harvard.edu"),
-	      person("Margaret", "Roberts", role = c("ctb", "cph")),
-        person("Brandon", "Stewart", role = c("aut", "cph")),
-	      person("Dustin", "Tingley", role = c("ctb", "ths", "cph")))
-Author: Antonio Coppola [aut, cre, cph], Brandon Stewart [aut, cph], Margaret
-    Roberts [ctb, cph], Dustin Tingley [ctb, ths, cph]
-Maintainer: Antonio Coppola <acoppola@college.harvard.edu>
+    stm,
+    stats,
+    methods,
+    utils
+Author: Antonio Coppola, Margaret Roberts, Brandon Stewart, Dustin Tingley
+Maintainer: Antonio Coppola <acoppola@alumni.harvard.edu>
 Description: Generates an interactive visualization of topic correlations/
     hierarchy in a Structural Topic Model (STM) of Roberts, Stewart, and Tingley.
     The package performs a hierarchical clustering of topics which are then exported
     to a JSON object and visualized using D3.
 License: GPL (>= 2)
-RoxygenNote: 4.1.1.9001
-Suggests:
-    htmltools,
-    htmlwidgets,
-    knitr,
-    rmarkdown
-VignetteBuilder: knitr
+Packaged: 2015-07-12 17:44:48 UTC; acoppola
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2015-07-12 23:39:01
+RoxygenNote: 5.0.1
